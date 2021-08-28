@@ -286,7 +286,7 @@ total_epochs = 36
 dist_params = dict(backend='nccl')
 log_level = 'INFO'
 # work_dir = './work_dirs/faster_rcnn_RoITrans_r50_fpn_1x_dota'############################################
-work_dir = './work_dirs/RoITrans+Head_libraloss_r50_fpn_3x_hrsc2016'
+work_dir = './work_dirs/RoITrans_libraloss_sampling_r50_fpn_3x_hrsc2016'
 load_from = None
 resume_from = None
 workflow = [('train', 1)]
