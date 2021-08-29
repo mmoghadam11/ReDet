@@ -28,7 +28,8 @@ class IoUBalancedNegRbboxSampler(RandomRbboxSampler):
                  floor_fraction=0,
                  num_bins=3,
                  **kwargs):
-        super(IoUBalancedNegSampler, self).__init__(num, pos_fraction,
+        ##################################################################################IoUBalancedNegSampler===>IoUBalancedNegRbboxSampler
+        super(IoUBalancedNegRbboxSampler, self).__init__(num, pos_fraction,
                                                     **kwargs)
         assert floor_thr >= 0 or floor_thr == -1
         assert 0 <= floor_fraction <= 1
