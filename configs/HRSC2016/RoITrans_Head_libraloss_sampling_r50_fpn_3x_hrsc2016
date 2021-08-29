@@ -184,14 +184,14 @@ train_cfg = dict(
                 add_gt_as_proposals=True),                                                    #
              ##################################################################################
             #  sampler=dict(
-            # type='CombinedSampler',
+            # type='CombinedRbboxSampler',
             # num=256,
             # # pos_fraction=0.25,
             # pos_fraction=0.25,
             # add_gt_as_proposals=True,###################################
-            # pos_sampler=dict(type='InstanceBalancedPosSampler'),
+            # pos_sampler=dict(type='InstanceBalancedPosRbboxSampler'),
             # neg_sampler=dict(
-            #     type='IoUBalancedNegSampler',
+            #     type='IoUBalancedNegRbboxSampler',
             #     floor_thr=-1,
             #     floor_fraction=0,
             #     num_bins=3)),
