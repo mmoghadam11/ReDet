@@ -1,7 +1,7 @@
 import numpy as np
 import torch
 
-from .random_sampler import RandomRbboxSampler
+from .rbbox_random_sampler import RandomRbboxSampler
 
 
 class IoUBalancedNegRbboxSampler(RandomRbboxSampler):
