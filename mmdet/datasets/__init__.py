@@ -13,6 +13,8 @@ from .repeat_dataset import RepeatDataset
 from .utils import to_tensor, random_scale, show_ann, get_dataset
 from .voc import VOCDataset
 from .xml_style import XMLDataset
+########################################
+from .UCAS_AOD import UCASAOD
 
 __all__ = [
     'CustomDataset', 'XMLDataset', 'CocoDataset', 'DOTADataset', 'DOTA2Dataset',
@@ -21,4 +23,6 @@ __all__ = [
     'show_ann', 'get_dataset', 'ConcatDataset', 'RepeatDataset',
     'ExtraAugmentation', 'HRSCL1Dataset', 'DOTADataset_v3',
     'DOTA1_5Dataset', 'DOTA1_5Dataset_v3', 'DOTA1_5Dataset_v2', 'DOTA2Dataset_v4'
+    ###############3
+    ,'UCASAOD'
 ]
