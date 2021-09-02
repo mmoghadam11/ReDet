@@ -148,7 +148,7 @@ dataset_type = 'UCASAOD'
 ######################################################################################################################
 # data_root = '/content/ReDet/data/dota1_1024/'
 # data_root = '/content/ReDet/data/dota_redet/'
-data_root = '/content/ReDet/data/UCAS-AOD/'
+data_root = '/content/ReDet/data/UCAS_AOD659/'
 ######################################################################################################################
 img_norm_cfg = dict(
     mean=[123.675, 116.28, 103.53], std=[58.395, 57.12, 57.375], to_rgb=True)
@@ -157,8 +157,8 @@ data = dict(
     workers_per_gpu=2,
     train=dict(
         type=dataset_type,
-        ann_file=data_root + 'Train/mmtrain.json',
-        img_prefix=data_root + 'Train/images/',
+        ann_file=data_root + 'trainval659/DOTA_trainval659.json',
+        img_prefix=data_root + 'trainval659/images/',
         img_scale=(659, 1280),
         img_norm_cfg=img_norm_cfg,
         size_divisor=32,
@@ -168,8 +168,8 @@ data = dict(
         with_label=True),
     val=dict(
         type=dataset_type,
-        ann_file=data_root + 'val/mmval.json',
-        img_prefix=data_root + 'val/images',
+        ann_file=data_root + 'trainval659/DOTA_trainval659.json',
+        img_prefix=data_root + 'trainval659/images',
         img_scale=(659, 1280),
         img_norm_cfg=img_norm_cfg,
         size_divisor=32,
@@ -180,9 +180,9 @@ data = dict(
     test=dict(
         type=dataset_type,
         #############################################################################################
-        ann_file=data_root + 'Test/mmtest.json',
+        ann_file=data_root + 'test659/DOTA_test659.json',
         # ann_file=data_root + 'val1024/DOTA_val1024.json',
-        img_prefix=data_root + 'Test/images',
+        img_prefix=data_root + 'test659/images',
         # img_prefix=data_root + 'val1024/images',
         # ann_file=data_root + 'test1024_ms/DOTA_test1024_ms.json',
         # img_prefix=data_root + 'test1024_ms/images',
