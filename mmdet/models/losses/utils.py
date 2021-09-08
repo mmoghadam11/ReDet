@@ -89,4 +89,4 @@ def weighted_loss(loss_func):
         loss = weight_reduce_loss(loss, weight, reduction, avg_factor)
         return loss
 
-    return 
+    return wrapper
