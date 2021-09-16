@@ -107,7 +107,7 @@ train_cfg = dict(
             # pos_weight=-1,
             sampler=dict(
             type='CombinedSampler',
-            num=256,
+            num=512,
             # pos_fraction=0.25,
             pos_fraction=0.25,
             add_gt_as_proposals=True,########################################
@@ -136,7 +136,7 @@ train_cfg = dict(
                           ##################################################################################
              sampler=dict(
             type='CombinedRbboxSampler',
-            num=256,
+            num=512,
             # pos_fraction=0.25,
             pos_fraction=0.25,
             add_gt_as_proposals=True,###################################
