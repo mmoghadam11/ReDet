@@ -2,6 +2,12 @@
 // https://github.com/facebookresearch/maskrcnn-benchmark/blob/master/maskrcnn_benchmark/csrc/SigmoidFocalLoss.h
 #include <torch/extension.h>
 
+// ######################################################
+#ifndef AT_CHECK
+#define AT_CHECK TORCH_CHECK
+#endif
+// #######################################################################################
+
 at::Tensor SigmoidFocalLoss_forward_cuda(const at::Tensor &logits,
                                          const at::Tensor &targets,
                                          const int num_classes,
