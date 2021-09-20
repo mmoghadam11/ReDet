@@ -3,6 +3,12 @@
 #include <cmath>
 #include <vector>
 
+// ######################################################
+#ifndef AT_CHECK
+#define AT_CHECK TORCH_CHECK
+#endif
+// #######################################################################################
+
 int ROIPoolForwardLaucher(const at::Tensor features, const at::Tensor rois,
                           const float spatial_scale, const int channels,
                           const int height, const int width, const int num_rois,
