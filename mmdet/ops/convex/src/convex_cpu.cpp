@@ -28,14 +28,20 @@ at::Tensor convex_sort_cpu_kernel(
       (x_t - start_x)*(x_t - start_x) + (y_t - start_y)*(y_t - start_y) + EPS);
   auto order_t = pts_cos.argsort(1, /*descend*/true);
 
-  scalar_t* x = x_t.data_ptr<scalar_t>();
-  scalar_t* y = y_t.data_ptr<scalar_t>();
-  scalar_t* m = masks_t.data_ptr<scalar_t>();
-  int64_t* start_index = start_index_t.data_ptr<int64_t>();
-  int64_t* order = order_t.data_ptr<int64_t>();
+//   scalar_t* x = x_t.data_ptr<scalar_t>();
+//   scalar_t* y = y_t.data_ptr<scalar_t>();
+//   scalar_t* m = masks_t.data_ptr<scalar_t>();
+//   int64_t* start_index = start_index_t.data_ptr<int64_t>();
+//   int64_t* order = order_t.data_ptr<int64_t>();
+  scalar_t* x = x_t.data<scalar_t>();
+  scalar_t* y = y_t.data<scalar_t>();
+  scalar_t* m = masks_t.data<scalar_t>();
+  int64_t* start_index = start_index_t.data<int64_t>();
+  int64_t* order = order_t.data<int64_t>();
 
   at::Tensor convex_index_t = at::full({nbs, index_size}, -1, pts.options().dtype(at::kLong));
-  int64_t* convex_index = convex_index_t.data_ptr<int64_t>();
+//   int64_t* convex_index = convex_index_t.data_ptr<int64_t>();
+  int64_t* convex_index = convex_index_t.data<int64_t>();	
 
   for (int64_t i = 0; i < nbs; i++) {
     scalar_t* sub_x = x + i * npts;
