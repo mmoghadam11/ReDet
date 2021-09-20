@@ -130,7 +130,7 @@ def poly_giou_loss(pred, target, eps=1e-6):
     return loss
 
 
-@LOSSES.register_module()
+@LOSSES.register_module
 class PolyIoULoss(nn.Module):
 
     def __init__(self,
@@ -175,7 +175,7 @@ class PolyIoULoss(nn.Module):
         return loss
 
 
-@LOSSES.register_module()
+@LOSSES.register_module
 class PolyGIoULoss(nn.Module):
 
     def __init__(self,
