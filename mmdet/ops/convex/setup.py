@@ -3,7 +3,7 @@ from setuptools import setup
 from torch.utils.cpp_extension import BuildExtension, CUDAExtension
 
 setup(
-    name='riroi_align_cuda',
+    name='convex_ext',
     ext_modules=[
         CUDAExtension('convex_ext', [
             'src/convex_cpu.cpp',
