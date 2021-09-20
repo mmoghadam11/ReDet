@@ -112,10 +112,14 @@ at::Tensor convex_sort_cuda(
 
   AT_DISPATCH_FLOATING_TYPES(pts.scalar_type(), "convex_sort", [&] {
       convex_sort_kernel<<<blocks, threads, 0, stream>>>(
-	  nbs, npts, index_size, circular, x_t.data_ptr<scalar_t>(),
-	  y_t.data_ptr<scalar_t>(), masks_t.data_ptr<scalar_t>(),
-	  start_index_t.data_ptr<int64_t>(), order_t.data_ptr<int64_t>(),
-	  convex_index_t.data_ptr<int64_t>());
+// 	  nbs, npts, index_size, circular, x_t.data_ptr<scalar_t>(),
+// 	  y_t.data_ptr<scalar_t>(), masks_t.data_ptr<scalar_t>(),
+// 	  start_index_t.data_ptr<int64_t>(), order_t.data_ptr<int64_t>(),
+// 	  convex_index_t.data_ptr<int64_t>());
+	  nbs, npts, index_size, circular, x_t.data<scalar_t>(),
+	  y_t.data<scalar_t>(), masks_t.data<scalar_t>(),
+	  start_index_t.data<int64_t>(), order_t.data<int64_t>(),
+	  convex_index_t.data<int64_t>());    
   });
   cudaDeviceSynchronize();
   AT_CUDA_CHECK(cudaGetLastError());
