@@ -9,6 +9,17 @@ if [ -d "build" ]; then
 fi
 $PYTHON setup.py build_ext --inplace
 
+################################################
+
+echo "Building convex op..."
+cd ../convex
+if [ -d "build" ]; then
+    rm -r build
+fi
+$PYTHON setup.py build_ext --inplace
+
+################################################
+
 echo "Building roi pool op..."
 cd ../roi_pool
 if [ -d "build" ]; then
