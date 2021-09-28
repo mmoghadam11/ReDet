@@ -1,7 +1,7 @@
   #https://github.com/jbwang1997/OBBDetection/blob/4fd26a74f5e4a5aec9395b39a78b0faaaff7c07c/mmdet/ops/convex/convex_wrapper.py#L20
 
   
-  from torch.autograd import Function
+from torch.autograd import Function
 from . import convex_ext
 
 
