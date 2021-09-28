@@ -23,13 +23,13 @@ from .transforms_rbbox import (dbbox2delta, delta2dbbox, mask2poly,
 from .bbox_target_rbbox import bbox_target_rbbox, rbbox_target_rbbox
 
 #################################################
-from .form import (poly2obb, rectpoly2obb, poly2hbb, obb2poly, obb2hbb,
+from .transforms_obb.form import (poly2obb, rectpoly2obb, poly2hbb, obb2poly, obb2hbb,
                    hbb2poly, hbb2obb, bbox2type)
-from .mapping import (hbb_flip, obb_flip, poly_flip, hbb_warp, obb_warp,
+from .transforms_obb.mapping import (hbb_flip, obb_flip, poly_flip, hbb_warp, obb_warp,
                       poly_warp, hbb_mapping, obb_mapping, poly_mapping,
                       hbb_mapping_back, obb_mapping_back, poly_mapping_back,
                       arb_mapping, arb_mapping_back)
-from .misc import (get_bbox_type, get_bbox_dim, get_bbox_areas, choice_by_type,
+from .transforms_obb.misc import (get_bbox_type, get_bbox_dim, get_bbox_areas, choice_by_type,
                    arb2result, arb2roi, distance2obb, regular_theta, regular_obb,
                    mintheta_obb)
 
@@ -57,7 +57,8 @@ __all__ = [
     'poly_warp', 'hbb_mapping', 'obb_mapping', 'poly_mapping', 'hbb_mapping_back',
     'obb_mapping_back', 'poly_mapping_back', 'get_bbox_type', 'get_bbox_dim', 'get_bbox_areas',
     'choice_by_type', 'arb2roi', 'arb2result', 'distance2obb', 'arb_mapping', 'arb_mapping_back',
-    'OBBOverlaps', 'PolyOverlaps', 'OBBSamplingResult', 'OBBBaseSampler', 'OBBRandomSampler',
-    'OBBOHEMSampler', 'OBB2OBBDeltaXYWHTCoder', 'HBB2OBBDeltaXYWHTCoder', 'regular_theta',
+#     'OBBOverlaps', 'PolyOverlaps', 'OBBSamplingResult', 'OBBBaseSampler', 'OBBRandomSampler',
+#     'OBBOHEMSampler', 'OBB2OBBDeltaXYWHTCoder', 'HBB2OBBDeltaXYWHTCoder',
+    'regular_theta',
     'regular_obb', 'mintheta_obb'
 ]
